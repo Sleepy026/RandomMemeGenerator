@@ -8,6 +8,6 @@ import java.util.List;
 public class DataManager {
 
     public List<String> getGeneratedText() {
-        return List.of("Bottom text","Top text");
+        return List.of("Bottom text","Top text","Ok Boomer","bOtTom tExT");
     }
 }
