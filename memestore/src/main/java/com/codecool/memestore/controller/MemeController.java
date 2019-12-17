@@ -31,7 +31,7 @@ public class MemeController {
         memeService.downVote(memeId);
     }
 
-    @PostMapping("save-meme")
+    @PostMapping("/save-meme")
     public void createMeme(@RequestBody String url) {
         memeService.createMeme(url);
     }
