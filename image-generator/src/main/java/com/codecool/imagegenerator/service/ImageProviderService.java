@@ -32,7 +32,7 @@ public class ImageProviderService {
 
     public Image getRandomImage() {
         String resultKey = getRandomTemplateKey();
-        String resultUrl = baseUrl + templates.get(getRandomTemplateKey());
+        String resultUrl = baseUrl + templates.get(getRandomTemplateKey()) + ".jpg";
         return Image.builder().template_id(resultKey).url(resultUrl).build();
     }
 }
