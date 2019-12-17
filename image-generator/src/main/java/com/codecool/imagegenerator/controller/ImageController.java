@@ -13,8 +13,8 @@ public class ImageController {
     private ImageProviderService imageProviderService;
 
     @GetMapping("/")
-    public String getImageUrl() {
-        return imageProviderService.getRandomImageUrl();
+    public String getImage() {
+        return imageProviderService.getRandomImage();
     }
 
 }
