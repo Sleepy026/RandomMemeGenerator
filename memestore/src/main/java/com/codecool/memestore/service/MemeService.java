@@ -34,4 +34,12 @@ public class MemeService {
         meme.setDownVote(meme.getDownVote() + 1);
         save(meme);
     }
+
+    public void createMeme(String url) {
+        save(Meme.builder()
+                .url(url)
+                .upVote(0)
+                .downVote(0)
+                .build());
+    }
 }
