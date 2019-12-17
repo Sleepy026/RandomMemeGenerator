@@ -1,5 +1,6 @@
 package com.codecool.imagegenerator.controller;
 
+import com.codecool.imagegenerator.model.Image;
 import com.codecool.imagegenerator.service.ImageProviderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +14,7 @@ public class ImageController {
     private ImageProviderService imageProviderService;
 
     @GetMapping("/")
-    public String getImage() {
+    public Image getImage() {
         return imageProviderService.getRandomImage();
     }
 

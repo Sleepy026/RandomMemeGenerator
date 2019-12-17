@@ -1,5 +1,6 @@
 package com.codecool.imagegenerator.service;
 
+import com.codecool.imagegenerator.model.Image;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -17,6 +18,8 @@ public class ImageProviderService {
             entry("129242436", "Change-My-Mind"),
             entry("438680", "Batman-Slapping-Robin"),
             entry("114585149", "Inhaling-Seagull"),
+            entry("27813981", "Hide-the-Pain-Harold"),
+            entry("91545132", "Trump-Bill-Signing"),
             entry("718432", "Back-In-My-Day")
     );
 
@@ -27,7 +30,9 @@ public class ImageProviderService {
         return templateKeys.get(0);
     }
 
-    public String getRandomImage() {
-        return templates.get(getRandomTemplateKey());
+    public Image getRandomImage() {
+        String resultKey = getRandomTemplateKey();
+        String resultUrl = baseUrl + templates.get(getRandomTemplateKey());
+        return Image.builder().template_id(resultKey).url(resultUrl).build();
     }
 }
