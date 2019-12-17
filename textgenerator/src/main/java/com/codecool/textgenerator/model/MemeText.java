@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Data
 @NoArgsConstructor
@@ -13,6 +15,10 @@ import javax.persistence.Entity;
 @Builder
 @Entity
 public class MemeText {
+
+    @GeneratedValue
+    @Id
+    private Long id;
 
     String value;
 
