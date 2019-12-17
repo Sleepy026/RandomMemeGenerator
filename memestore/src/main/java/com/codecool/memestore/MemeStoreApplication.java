@@ -38,6 +38,22 @@ public class MemeStoreApplication {
                     .build();
 
             memeService.save(meme1);
+
+            Meme meme2 = Meme.builder()
+                    .url("img url comes here")
+                    .upVote(100)
+                    .downVote(1)
+                    .build();
+
+            memeService.save(meme2);
+
+            Meme meme3 = Meme.builder()
+                    .url("img url comes here")
+                    .upVote(3000)
+                    .downVote(1)
+                    .build();
+
+            memeService.save(meme3);
         };
     }
 
