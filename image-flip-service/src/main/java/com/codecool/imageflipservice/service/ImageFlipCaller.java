@@ -1,19 +1,22 @@
 package com.codecool.imageflipservice.service;
 
+import com.codecool.imageflipservice.model.generatedmodel.ResponseModel;
 import com.codecool.imageflipservice.model.RequestMemeModel;
-import com.codecool.imageflipservice.model.ResponseImageFlipModel;
-import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.client.RestTemplate;
 
 @Service
+@CrossOrigin
 public class ImageFlipCaller {
 
     @Autowired
-    private RestTemplate restTemplate;
+    private RestTemplate externalRestTemplate;
 
     @Value("${imageflip.username}")
     private String username;
@@ -21,19 +24,26 @@ public class ImageFlipCaller {
     private String password;
 
 
-    public String sendDataToImageFlip(RequestMemeModel requestMemeModel) {
-        JSONObject requestData = new JSONObject();
-        requestData.put("text0", requestMemeModel.getText());
-        requestData.put("template_id", requestMemeModel.getTemplateId());
-        requestData.put("password", password);
-        requestData.put("username", username);
+    public ResponseModel sendDataToImageFlip(RequestMemeModel requestMemeModel) {
 
-        ResponseEntity<ResponseImageFlipModel> response = restTemplate.postForEntity(
+        MultiValueMap<String, String> requestData = new LinkedMultiValueMap<>();
+        requestData.add("template_id", requestMemeModel.getTemplateId());
+        requestData.add("username", username);
+        requestData.add("password", password);
+        requestData.add("text0", requestMemeModel.getText());
+        requestData.add("text1", "kutyaaa");
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
+        HttpEntity<MultiValueMap<String, String>> flip = new HttpEntity<>(requestData, headers);
+
+        ResponseModel responseModel = externalRestTemplate.postForEntity(
                 "https://api.imgflip.com/caption_image",
-                requestData,
-                ResponseImageFlipModel.class
-        );
+                flip,
+                ResponseModel.class
+        ).getBody();
 
-        return response.getBody().getResponseDataContent().getUrl();
+
+        return responseModel;
     }
 }

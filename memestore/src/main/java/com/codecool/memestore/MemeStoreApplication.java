@@ -32,7 +32,7 @@ public class MemeStoreApplication {
     public CommandLineRunner init() {
         return args -> {
             Meme meme1 = Meme.builder()
-                    .url("img url comes here")
+                    .url("https://i.imgflip.com/3jd2vv.jpg")
                     .upVote(10)
                     .downVote(1)
                     .build();
@@ -40,7 +40,7 @@ public class MemeStoreApplication {
             memeService.save(meme1);
 
             Meme meme2 = Meme.builder()
-                    .url("img url comes here")
+                    .url("https://i.imgflip.com/3jd2vv.jpg")
                     .upVote(100)
                     .downVote(1)
                     .build();
@@ -48,7 +48,7 @@ public class MemeStoreApplication {
             memeService.save(meme2);
 
             Meme meme3 = Meme.builder()
-                    .url("img url comes here")
+                    .url("https://i.imgflip.com/3jd2vv.jpg")
                     .upVote(3000)
                     .downVote(1)
                     .build();

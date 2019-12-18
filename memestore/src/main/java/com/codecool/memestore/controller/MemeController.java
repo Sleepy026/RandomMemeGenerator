@@ -12,7 +12,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/")
+@CrossOrigin
 public class MemeController {
 
     @Autowired
