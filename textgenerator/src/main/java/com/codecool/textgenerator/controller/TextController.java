@@ -1,5 +1,6 @@
 package com.codecool.textgenerator.controller;
 
+import com.codecool.textgenerator.model.MemeText;
 import com.codecool.textgenerator.service.DataManager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -17,9 +18,9 @@ public class TextController {
     @Autowired
     private DataManager dataManager;
 
-    @GetMapping("/get-generated-text")
-    public List<String> getGeneratedText(){
-        return dataManager.getGeneratedText();
+    @GetMapping("/random-text")
+    public List<MemeText> getRandomText(){
+        return dataManager.getRandomTexts();
     }
 
 }
