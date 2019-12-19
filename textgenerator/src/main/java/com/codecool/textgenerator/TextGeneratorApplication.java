@@ -40,10 +40,37 @@ public class TextGeneratorApplication {
     @Bean
     public CommandLineRunner init(){
         return args -> {
-            MemeText bottom_text = MemeText.builder()
-                    .value("Bottom text")
+            MemeText text1 = MemeText.builder()
+                    .text0("Bottom")
+                    .text1("text")
                     .build();
-            memeTextRepository.save(bottom_text);
+            memeTextRepository.save(text1);
+            MemeText text2 = MemeText.builder()
+                    .text0("Sample")
+                    .text1("text")
+                    .build();
+            memeTextRepository.saveAndFlush(text2);
+            MemeText text3 = MemeText.builder()
+                    .text0("Top")
+                    .text1("text")
+                    .build();
+            memeTextRepository.saveAndFlush(text3);
+            MemeText text4 = MemeText.builder()
+                    .text0("Ok")
+                    .text1("boomer")
+                    .build();
+            memeTextRepository.saveAndFlush(text4);
+            MemeText text5 = MemeText.builder()
+                    .text0("Miau")
+                    .text1("Miau")
+                    .build();
+            memeTextRepository.saveAndFlush(text5);
+            MemeText text6 = MemeText.builder()
+                    .text0("You have never watched a full movie")
+                    .text1("because you blinked.")
+                    .build();
+            memeTextRepository.saveAndFlush(text6);
+
         };
     }
 }
