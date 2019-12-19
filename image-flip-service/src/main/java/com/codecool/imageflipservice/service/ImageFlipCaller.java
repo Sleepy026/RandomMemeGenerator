@@ -30,8 +30,8 @@ public class ImageFlipCaller {
         requestData.add("template_id", requestMemeModel.getTemplateId());
         requestData.add("username", username);
         requestData.add("password", password);
-        requestData.add("text0", requestMemeModel.getText());
-        requestData.add("text1", "kutyaaa");
+        requestData.add("text0", requestMemeModel.getText0());
+        requestData.add("text0", requestMemeModel.getText1());
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);

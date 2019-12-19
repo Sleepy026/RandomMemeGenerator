@@ -12,6 +12,7 @@ import lombok.NoArgsConstructor;
 public class RequestMemeModel {
 
     private String templateId;
-    private String text;
+    private String text0;
+    private String text1;
 
 }

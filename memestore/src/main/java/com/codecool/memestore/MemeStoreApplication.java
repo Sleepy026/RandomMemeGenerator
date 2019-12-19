@@ -32,7 +32,7 @@ public class MemeStoreApplication {
     public CommandLineRunner init() {
         return args -> {
             Meme meme1 = Meme.builder()
-                    .url("https://i.imgflip.com/3jd2vv.jpg")
+                    .url("https://i.imgflip.com/3jx9m0.jpg")
                     .upVote(10)
                     .downVote(1)
                     .build();
