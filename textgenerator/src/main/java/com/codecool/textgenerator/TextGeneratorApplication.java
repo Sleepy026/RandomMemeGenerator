@@ -70,6 +70,26 @@ public class TextGeneratorApplication {
                     .text1("because you blinked.")
                     .build();
             memeTextRepository.saveAndFlush(text6);
+            MemeText text7 = MemeText.builder()
+                    .text0("So far...")
+                    .text1("So good!")
+                    .build();
+            memeTextRepository.saveAndFlush(text7);
+            MemeText text8 = MemeText.builder()
+                    .text0("IGHT IMMA")
+                    .text1("HEAD OUT")
+                    .build();
+            memeTextRepository.saveAndFlush(text8);
+            MemeText text9 = MemeText.builder()
+                    .text0("Run as admin")
+                    .text1("Sudo")
+                    .build();
+            memeTextRepository.saveAndFlush(text9);
+            MemeText text10 = MemeText.builder()
+                    .text0("I bet he is thinking about other women")
+                    .text1("Words more words")
+                    .build();
+            memeTextRepository.saveAndFlush(text10);
 
         };
     }
