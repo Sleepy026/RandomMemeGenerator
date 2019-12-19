@@ -49,7 +49,7 @@ public class MemeStoreApplication {
 
             Meme meme3 = Meme.builder()
                     .url("https://i.imgflip.com/3jd2vv.jpg")
-                    .upVote(3000)
+                    .upVote(80)
                     .downVote(1)
                     .build();
 
