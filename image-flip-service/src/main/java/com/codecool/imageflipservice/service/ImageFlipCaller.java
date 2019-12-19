@@ -20,6 +20,7 @@ public class ImageFlipCaller {
 
     @Value("${imageflip.username}")
     private String username;
+
     @Value("${imageflip.password}")
     private String password;
 
