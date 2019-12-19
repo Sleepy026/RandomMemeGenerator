@@ -9,5 +9,5 @@ import java.util.List;
 @Repository
 public interface MemeRepository extends JpaRepository<Meme, Long> {
 
-    List<Meme> findAllByOrderByUpVoteDesc();
+    List<Meme> findAllByOrderByIdDesc();
 }

@@ -19,6 +19,7 @@ public class MemeText {
     @GeneratedValue
     @Id
     Long id;
-    String value;
+    String text0;
+    String text1;
 
 }

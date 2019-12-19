@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/")
 @CrossOrigin
 public class RouteController {
 
@@ -17,7 +16,7 @@ public class RouteController {
     @Autowired
     private ImageFlipCaller imageFlipCaller;
 
-    @PostMapping("/image-flip")
+    @PostMapping("/")
     public String createMeme(@RequestBody RequestMemeModel requestMemeModel){
         ResponseModel imageURL = imageFlipCaller.sendDataToImageFlip(requestMemeModel);
         return memeStoreCaller.saveMeme(imageURL.getDataModel().getUrl());

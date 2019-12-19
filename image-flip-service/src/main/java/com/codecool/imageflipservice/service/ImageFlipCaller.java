@@ -20,6 +20,7 @@ public class ImageFlipCaller {
 
     @Value("${imageflip.username}")
     private String username;
+
     @Value("${imageflip.password}")
     private String password;
 
@@ -31,7 +32,7 @@ public class ImageFlipCaller {
         requestData.add("username", username);
         requestData.add("password", password);
         requestData.add("text0", requestMemeModel.getText0());
-        requestData.add("text0", requestMemeModel.getText1());
+        requestData.add("text1", requestMemeModel.getText1());
 
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_FORM_URLENCODED);
