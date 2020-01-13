@@ -22,7 +22,6 @@ public class ImageProviderService {
             entry("91545132", "Trump-Bill-Signing"),
             entry("155067746", "Surprised-Pikachu"),
             entry("119139145", "Blank-Nut-Button"),
-            entry("178591752", "Tuxedo-Winnie-The-Pooh"),
             entry("188390779", "Woman-Yelling-At-Cat"),
             entry("132769734", "Hard-To-Swallow-Pills"),
             entry("123999232", "The-Scroll-Of-Truth"),

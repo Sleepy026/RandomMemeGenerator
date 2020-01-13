@@ -33,16 +33,16 @@ public class MemeStoreApplication {
         return args -> {
             Meme meme1 = Meme.builder()
                     .url("https://i.imgflip.com/3jx9m0.jpg")
-                    .upVote(10)
-                    .downVote(1)
+                    .upVote(79)
+                    .downVote(0)
                     .build();
 
             memeService.save(meme1);
 
             Meme meme2 = Meme.builder()
                     .url("https://i.imgflip.com/3jd2vv.jpg")
-                    .upVote(100)
-                    .downVote(1)
+                    .upVote(81)
+                    .downVote(13)
                     .build();
 
             memeService.save(meme2);
@@ -50,7 +50,7 @@ public class MemeStoreApplication {
             Meme meme3 = Meme.builder()
                     .url("https://i.imgflip.com/3jd2vv.jpg")
                     .upVote(80)
-                    .downVote(1)
+                    .downVote(21)
                     .build();
 
             memeService.save(meme3);
